@@ -2,43 +2,100 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-let Store = (location, minCustomers, maxCustomers, avgCookiesPerCustomer) => {
+function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location; //a string
   this.minCustomers = minCustomers; //a number
   this.maxCustomers = maxCustomers; //a number
   this.avgCookiesPerCustomer = avgCookiesPerCustomer; //a number
   this.cookiesEachHour = []; //an array
   this.cookiesPurchased = 0; //a number
+
+  console.log(this);
 }
 
-Store.prototype.generateRandomNumOfCustomers = () => {
+Store.prototype.generateRandomNumOfCustomers = (min, max) => {
   //TODO: generate a random number using max and min of customers
-}
+  console.log('this is: generateRandomNumOfCustomers');
+},
 
-Store.prototype.calcCookiesEachHour = () => {
+Store.prototype.calcCookiesEachHour = (num, avg) => {
   //TODO: calcuate cookies needed using random number and average cookies per customer for each hour
-}
+  console.log('this is: alcCookiesEachHour');
+},
 
-Store.prototype.calcTotalCookiesPurchased = () => {
+Store.prototype.calcTotalCookiesPurchased = (arr) => {
   //TODO: sum cookies each hour into total of cookies for the day
-}
+  console.log('this is: calcTotalCookiesPurchased');
+},
 
 Store.prototype.render = () => {
   //TODO: render a row of store data to the table on sales page
   //do DOM stuff here
   //use createHeader
   //use createFooter
+  console.log('this is: render');
 }
 
 const createHeader = () => {
   //TODO: create a header row for table on sales page
   //do DOM stuff here
+  console.log('this is: createHeader');
 }
 
 const createFooter = () => {
   //TODO: create a footer row for table on sales page
   //do DOM stuff here
+  console.log('this is: createFooter');
 }
+
+
+let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
+let seatacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
+let seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+let capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+let alki = new Store('Alki', 2, 16, 4.6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //********* FIRST AND PIKE *********//
