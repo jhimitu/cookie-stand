@@ -33,7 +33,10 @@ Store.prototype.calcCookiesEachHour = function() {
 
 Store.prototype.calcTotalCookiesPurchased = function() {
   //TODO: sum cookies each hour into total of cookies for the day
-  console.log('this is: calcTotalCookiesPurchased');
+  this.cookiesPurchased = this.cookiesEachHour.reduce((acc, val) => {
+    return acc + val;
+  });
+  console.log(this.cookiesPurchased);
 },
 
 Store.prototype.render = function() {
@@ -60,6 +63,7 @@ const createFooter = function() {
 let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 firstAndPike.generateRandomNumOfCustomers();
 firstAndPike.calcCookiesEachHour();
+firstAndPike.calcTotalCookiesPurchased();
 
 let seatacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 let seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
