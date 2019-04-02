@@ -17,14 +17,18 @@ Store.prototype.generateRandomNumOfCustomers = function() {
   //TODO: generate a random number using max and min of customers
   let max = this.maxCustomers;
   let min = this.minCustomers;
-  
-  console.log(Math.floor(Math.random() * (max - min + 1)));
+
   return Math.floor(Math.random() * (max - min + 1));
 },
 
 Store.prototype.calcCookiesEachHour = function() {
   //TODO: calcuate cookies needed using random number and average cookies per customer for each hour
-  console.log('this is: alcCookiesEachHour');
+  hours.forEach(() => {
+    let customers = this.generateRandomNumOfCustomers();
+    let cookiesForHour = Math.ceil(customers * this.avgCookiesPerCustomer);
+    this.cookiesEachHour.push(cookiesForHour);
+  });
+  console.log(this.cookiesEachHour);
 },
 
 Store.prototype.calcTotalCookiesPurchased = function() {
@@ -55,6 +59,7 @@ const createFooter = function() {
 
 let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 firstAndPike.generateRandomNumOfCustomers();
+firstAndPike.calcCookiesEachHour();
 
 let seatacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 let seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
