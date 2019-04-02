@@ -3,6 +3,7 @@
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 let locations = [];
+console.log(locations);
 
 function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location; //a string
@@ -22,7 +23,7 @@ Store.prototype.generateRandomNumOfCustomers = function() {
   let max = this.maxCustomers;
   let min = this.minCustomers;
 
-  return Math.floor(Math.random() * (max - min + 1));
+  return Math.floor(Math.random() * (max - min + 1) + min);
 },
 
 Store.prototype.calcCookiesEachHour = function() {
@@ -46,7 +47,21 @@ Store.prototype.calcTotalCookiesPurchased = function() {
 Store.prototype.render = function() {
   //TODO: render a row of store data to the table on sales page
   //do DOM stuff here
+
   //use createHeader
+
+  //create a tbody el
+  //for each location
+    //create a tr element
+    //create a th
+    //add text with location name
+    //append th to tr
+    //for each hour
+      //create a td element
+      //add text content from cookie totals array item with corresponding index
+      //append td to tr
+  //append tr to tbody
+
   //use createFooter
   console.log('this is: render');
 }
@@ -55,11 +70,14 @@ const createHeader = function() {
   //TODO: create a header row for table on sales page
   //do DOM stuff here
   let table = document.getElementById('daily-sales-projections');
+  let tblHead = document.createElement('thead');
+
+  table.appendChild(tblHead);
   let trElem = document.createElement('tr');
   let thPlaceholder = document.createElement('th');
   let thEnd = document.createElement('th');
 
-  table.appendChild(trElem);
+  tblHead.appendChild(trElem);
   trElem.appendChild(thPlaceholder);
 
   hours.forEach((hour) => {
@@ -75,6 +93,24 @@ const createHeader = function() {
 const createFooter = function() {
   //TODO: create a footer row for table on sales page
   //do DOM stuff here
+  //grab the table element
+  //create a tfoot element
+  //append tfoot to table
+  //create a row and append to tfoot
+
+  //for each hour
+    //for each location
+      //take the total cookies for hour
+      //add number to an array
+    //sum the total cookies from each location for the hour
+    //create a td element
+    //append td to tr
+
+  //for each row
+    //grad the last child element
+    //push data of child el to an array
+  //reduce array of child element data
+  //append to row
   console.log('this is: createFooter');
 }
 
@@ -105,7 +141,6 @@ alki.generateRandomNumOfCustomers();
 alki.calcCookiesEachHour();
 alki.calcTotalCookiesPurchased();
 
-createHeader();
 
 
 
