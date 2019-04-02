@@ -7,11 +7,16 @@ let firstAndPike = {
   maxNumberOfCustomers: 65,
   averageNumOfCookiesPurchasedPerCustomer: 6.3,
   generateARandomNumberOfCustomers: function () {
-    console.log(Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers);
+    return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
-  // simulateCookiesPurchasedPerHour: function () {
-
-  // },
+  simulateCookiesPurchasedPerHour: function () {
+    hours.forEach((hour) => {
+      let customers = this.generateARandomNumberOfCustomers();
+      let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
+      this.cookiePurchaseTotalsPerHour.push(`${hour}: ${cookiesPurchased} cookies`);
+    });
+    console.log(this.cookiePurchaseTotalsPerHour);
+  },
   cookiePurchaseTotalsPerHour: [],
   totalCookiesPurchasedPerDay: 0
 };
