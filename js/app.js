@@ -142,19 +142,40 @@ let capitolHill = {
   }
 };
 
-// let alki = {
-//   minNumberOfCustomers: 2,
-//   maxNumberOfCustomers: 16,
-//   averageNumOfCookiesPurchasedPerCustomer: 4.6,
-//   generateARandomNumberOfCustomers: function () {
+//********* ALKI *********//
 
-//   },
-//   simulateCookiesPurchasedPerHour: function () {
-
-//   },
-//   cookiePurchaseTotalsPerHour: [],
-//   totalCookiesPurchasedPerDay: 0
-// };
+let alki = {
+  minNumberOfCustomers: 2,
+  maxNumberOfCustomers: 16,
+  averageNumOfCookiesPurchasedPerCustomer: 4.6,
+  generateARandomNumberOfCustomers: function () {
+    return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
+  },
+  simulateCookiesPurchasedPerHour: function () {
+    hours.forEach((hour) => {
+      let customers = this.generateARandomNumberOfCustomers();
+      let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
+      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+    });
+  },
+  cookiePurchaseTotalsPerHour: [],
+  calculateTotalCookiesPurchased: function () {
+    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+      return acc + val;
+    });
+  },
+  displayCookiesPerHour: function () {
+    let listElement = document.getElementById('alki');
+    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
+      listElement.appendChild(listItem);
+    });
+    let lastListItem = document.createElement('li');
+    lastListItem.textContent = `Total: ${this.calculateTotalCookiesPurchased()} cookies`;
+    listElement.appendChild(lastListItem);
+  }
+};
 
 firstAndPike.generateARandomNumberOfCustomers();
 firstAndPike.simulateCookiesPurchasedPerHour();
@@ -175,3 +196,8 @@ capitolHill.generateARandomNumberOfCustomers();
 capitolHill.simulateCookiesPurchasedPerHour();
 capitolHill.calculateTotalCookiesPurchased();
 capitolHill.displayCookiesPerHour();
+
+alki.generateARandomNumberOfCustomers();
+alki.simulateCookiesPurchasedPerHour();
+alki.calculateTotalCookiesPurchased();
+alki.displayCookiesPerHour();
