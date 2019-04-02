@@ -12,7 +12,7 @@ let firstAndPike = {
     return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
   simulateCookiesPurchasedPerHour: function () {
-    hours.forEach((hour) => {
+    hours.forEach(() => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
@@ -47,7 +47,7 @@ let seatacAirport = {
     return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
   simulateCookiesPurchasedPerHour: function () {
-    hours.forEach((hour) => {
+    hours.forEach(() => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
@@ -82,7 +82,7 @@ let seattleCenter = {
     return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
   simulateCookiesPurchasedPerHour: function () {
-    hours.forEach((hour) => {
+    hours.forEach(() => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
@@ -117,7 +117,7 @@ let capitolHill = {
     return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
   simulateCookiesPurchasedPerHour: function () {
-    hours.forEach((hour) => {
+    hours.forEach(() => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
@@ -152,7 +152,7 @@ let alki = {
     return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
   },
   simulateCookiesPurchasedPerHour: function () {
-    hours.forEach((hour) => {
+    hours.forEach(() => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
