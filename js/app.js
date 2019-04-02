@@ -177,6 +177,8 @@ let alki = {
   }
 };
 
+
+
 firstAndPike.generateARandomNumberOfCustomers();
 firstAndPike.simulateCookiesPurchasedPerHour();
 firstAndPike.calculateTotalCookiesPurchased();
