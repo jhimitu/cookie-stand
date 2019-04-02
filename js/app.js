@@ -22,6 +22,18 @@ let firstAndPike = {
     return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
       return acc + val;
     });
+  },
+  displayCookiesPerHour: function () {
+    let listElement = document.getElementById('first-and-pike');
+    console.log(listElement);
+    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
+      listElement.appendChild(listItem);
+    });
+    let lastListItem = document.createElement('li');
+    lastListItem.textContent = `Total: ${this.calculateTotalCookiesPurchased()} cookies`;
+    listElement.appendChild(lastListItem);
   }
 };
 
@@ -81,3 +93,7 @@ let firstAndPike = {
 //   totalCookiesPurchasedPerDay: 0
 // };
 
+firstAndPike.generateARandomNumberOfCustomers();
+firstAndPike.simulateCookiesPurchasedPerHour();
+firstAndPike.calculateTotalCookiesPurchased();
+firstAndPike.displayCookiesPerHour();
