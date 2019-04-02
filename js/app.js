@@ -52,7 +52,6 @@ let seatacAirport = {
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
       this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
     });
-    console.log(this.cookiePurchaseTotalsPerHour);
   },
   cookiePurchaseTotalsPerHour: [],
   calculateTotalCookiesPurchased: function () {
@@ -62,7 +61,6 @@ let seatacAirport = {
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('seatac-airport');
-    console.log(listElement);
     this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
@@ -74,19 +72,40 @@ let seatacAirport = {
   }
 };
 
-// let seattleCenter = {
-//   minNumberOfCustomers: 11,
-//   maxNumberOfCustomers: 38,
-//   averageNumOfCookiesPurchasedPerCustomer: 2.3,
-//   generateARandomNumberOfCustomers: function () {
+//********* SEATTLE CENTER *********//
 
-//   },
-//   simulateCookiesPurchasedPerHour: function () {
-
-//   },
-//   cookiePurchaseTotalsPerHour: [] ,
-//   totalCookiesPurchasedPerDay: 0  
-// };
+let seattleCenter = {
+  minNumberOfCustomers: 11,
+  maxNumberOfCustomers: 38,
+  averageNumOfCookiesPurchasedPerCustomer: 2.3,
+  generateARandomNumberOfCustomers: function () {
+    return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
+  },
+  simulateCookiesPurchasedPerHour: function () {
+    hours.forEach((hour) => {
+      let customers = this.generateARandomNumberOfCustomers();
+      let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
+      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+    });
+  },
+  cookiePurchaseTotalsPerHour: [],
+  calculateTotalCookiesPurchased: function () {
+    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+      return acc + val;
+    });
+  },
+  displayCookiesPerHour: function () {
+    let listElement = document.getElementById('seattle-center');
+    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
+      listElement.appendChild(listItem);
+    });
+    let lastListItem = document.createElement('li');
+    lastListItem.textContent = `Total: ${this.calculateTotalCookiesPurchased()} cookies`;
+    listElement.appendChild(lastListItem);
+  }
+};
 
 // let capitolHill = {
 //   minNumberOfCustomers: 20,
@@ -125,3 +144,8 @@ seatacAirport.generateARandomNumberOfCustomers();
 seatacAirport.simulateCookiesPurchasedPerHour();
 seatacAirport.calculateTotalCookiesPurchased();
 seatacAirport.displayCookiesPerHour();
+
+seattleCenter.generateARandomNumberOfCustomers();
+seattleCenter.simulateCookiesPurchasedPerHour();
+seattleCenter.calculateTotalCookiesPurchased();
+seattleCenter.displayCookiesPerHour();
