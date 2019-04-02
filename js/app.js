@@ -107,19 +107,40 @@ let seattleCenter = {
   }
 };
 
-// let capitolHill = {
-//   minNumberOfCustomers: 20,
-//   maxNumberOfCustomers: 38,
-//   averageNumOfCookiesPurchasedPerCustomer: 2.3,
-//   generateARandomNumberOfCustomers: function () {
+//********* CAPITOL HILL *********//
 
-//   },
-//   simulateCookiesPurchasedPerHour: function () {
-
-//   },
-//   cookiePurchaseTotalsPerHour: [],
-//   totalCookiesPurchasedPerDay: 0
-// };
+let capitolHill = {
+  minNumberOfCustomers: 20,
+  maxNumberOfCustomers: 38,
+  averageNumOfCookiesPurchasedPerCustomer: 2.3,
+  generateARandomNumberOfCustomers: function () {
+    return Math.floor(Math.random() * (this.maxNumberOfCustomers - this.minNumberOfCustomers)) + this.minNumberOfCustomers;
+  },
+  simulateCookiesPurchasedPerHour: function () {
+    hours.forEach((hour) => {
+      let customers = this.generateARandomNumberOfCustomers();
+      let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
+      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+    });
+  },
+  cookiePurchaseTotalsPerHour: [],
+  calculateTotalCookiesPurchased: function () {
+    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+      return acc + val;
+    });
+  },
+  displayCookiesPerHour: function () {
+    let listElement = document.getElementById('capitol-hill');
+    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
+      listElement.appendChild(listItem);
+    });
+    let lastListItem = document.createElement('li');
+    lastListItem.textContent = `Total: ${this.calculateTotalCookiesPurchased()} cookies`;
+    listElement.appendChild(lastListItem);
+  }
+};
 
 // let alki = {
 //   minNumberOfCustomers: 2,
@@ -149,3 +170,8 @@ seattleCenter.generateARandomNumberOfCustomers();
 seattleCenter.simulateCookiesPurchasedPerHour();
 seattleCenter.calculateTotalCookiesPurchased();
 seattleCenter.displayCookiesPerHour();
+
+capitolHill.generateARandomNumberOfCustomers();
+capitolHill.simulateCookiesPurchasedPerHour();
+capitolHill.calculateTotalCookiesPurchased();
+capitolHill.displayCookiesPerHour();
