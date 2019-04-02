@@ -13,12 +13,16 @@ let firstAndPike = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(`${hour}: ${cookiesPurchased} cookies`);
+      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
     });
     console.log(this.cookiePurchaseTotalsPerHour);
   },
   cookiePurchaseTotalsPerHour: [],
-  totalCookiesPurchasedPerDay: 0
+  calculateTotalCookiesPurchased: function () {
+    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+      return acc + val;
+    });
+  }
 };
 
 // let seatacAirport = {
