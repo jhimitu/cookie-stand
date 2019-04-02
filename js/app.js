@@ -2,6 +2,8 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
+let locations = [];
+
 function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location; //a string
   this.minCustomers = minCustomers; //a number
@@ -9,6 +11,8 @@ function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.avgCookiesPerCustomer = avgCookiesPerCustomer; //a number
   this.cookiesEachHour = []; //an array
   this.cookiesPurchased = 0; //a number
+
+  locations.push(this);
 
   console.log(this);
 }
@@ -50,7 +54,22 @@ Store.prototype.render = function() {
 const createHeader = function() {
   //TODO: create a header row for table on sales page
   //do DOM stuff here
-  console.log('this is: createHeader');
+  let table = document.getElementById('daily-sales-projections');
+  let trElem = document.createElement('tr');
+  let thPlaceholder = document.createElement('th');
+  let thEnd = document.createElement('th');
+
+  table.appendChild(trElem);
+  trElem.appendChild(thPlaceholder);
+
+  hours.forEach((hour) => {
+    let thElem = document.createElement('th');
+    thElem.textContent = `${hour}`;
+    trElem.appendChild(thElem);
+  });
+
+  thEnd.textContent = 'Daily Location Total';
+  trElem.appendChild(thEnd);
 }
 
 const createFooter = function() {
@@ -61,20 +80,32 @@ const createFooter = function() {
 
 
 let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
-firstAndPike.generateRandomNumOfCustomers();
-firstAndPike.calcCookiesEachHour();
-firstAndPike.calcTotalCookiesPurchased();
-
 let seatacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 let seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 let capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 let alki = new Store('Alki', 2, 16, 4.6);
 
+firstAndPike.generateRandomNumOfCustomers();
+firstAndPike.calcCookiesEachHour();
+firstAndPike.calcTotalCookiesPurchased();
 
+seatacAirport.generateRandomNumOfCustomers();
+seatacAirport.calcCookiesEachHour();
+seatacAirport.calcTotalCookiesPurchased();
 
+seattleCenter.generateRandomNumOfCustomers();
+seattleCenter.calcCookiesEachHour();
+seattleCenter.calcTotalCookiesPurchased();
 
+capitolHill.generateRandomNumOfCustomers();
+capitolHill.calcCookiesEachHour();
+capitolHill.calcTotalCookiesPurchased();
 
+alki.generateRandomNumOfCustomers();
+alki.calcCookiesEachHour();
+alki.calcTotalCookiesPurchased();
 
+createHeader();
 
 
 
