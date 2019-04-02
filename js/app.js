@@ -15,18 +15,18 @@ let firstAndPike = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+      this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
     });
   },
-  cookiePurchaseTotalsPerHour: [],
+  totalsOfCookiesPurchasedPerHour: [],
   calculateTotalCookiesPurchased: function () {
-    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+    return this.totalsOfCookiesPurchasedPerHour.reduce((acc, val) => {
       return acc + val;
     });
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('first-and-pike');
-    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+    this.totalsOfCookiesPurchasedPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
       listElement.appendChild(listItem);
@@ -50,18 +50,18 @@ let seatacAirport = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+      this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
     });
   },
-  cookiePurchaseTotalsPerHour: [],
+  totalsOfCookiesPurchasedPerHour: [],
   calculateTotalCookiesPurchased: function () {
-    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+    return this.totalsOfCookiesPurchasedPerHour.reduce((acc, val) => {
       return acc + val;
     });
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('seatac-airport');
-    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+    this.totalsOfCookiesPurchasedPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
       listElement.appendChild(listItem);
@@ -85,18 +85,18 @@ let seattleCenter = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+      this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
     });
   },
-  cookiePurchaseTotalsPerHour: [],
+  totalsOfCookiesPurchasedPerHour: [],
   calculateTotalCookiesPurchased: function () {
-    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+    return this.totalsOfCookiesPurchasedPerHour.reduce((acc, val) => {
       return acc + val;
     });
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('seattle-center');
-    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+    this.totalsOfCookiesPurchasedPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
       listElement.appendChild(listItem);
@@ -120,18 +120,18 @@ let capitolHill = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+      this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
     });
   },
-  cookiePurchaseTotalsPerHour: [],
+  totalsOfCookiesPurchasedPerHour: [],
   calculateTotalCookiesPurchased: function () {
-    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+    return this.totalsOfCookiesPurchasedPerHour.reduce((acc, val) => {
       return acc + val;
     });
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('capitol-hill');
-    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+    this.totalsOfCookiesPurchasedPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
       listElement.appendChild(listItem);
@@ -155,18 +155,18 @@ let alki = {
     hours.forEach((hour) => {
       let customers = this.generateARandomNumberOfCustomers();
       let cookiesPurchased = Math.ceil(customers * this.averageNumOfCookiesPurchasedPerCustomer);
-      this.cookiePurchaseTotalsPerHour.push(cookiesPurchased);
+      this.totalsOfCookiesPurchasedPerHour.push(cookiesPurchased);
     });
   },
-  cookiePurchaseTotalsPerHour: [],
+  totalsOfCookiesPurchasedPerHour: [],
   calculateTotalCookiesPurchased: function () {
-    return this.cookiePurchaseTotalsPerHour.reduce((acc, val) => {
+    return this.totalsOfCookiesPurchasedPerHour.reduce((acc, val) => {
       return acc + val;
     });
   },
   displayCookiesPerHour: function () {
     let listElement = document.getElementById('alki');
-    this.cookiePurchaseTotalsPerHour.forEach((purchaseTotal, i) => {
+    this.totalsOfCookiesPurchasedPerHour.forEach((purchaseTotal, i) => {
       let listItem = document.createElement('li');
       listItem.textContent = `${hours[i]}: ${purchaseTotal} cookies`;
       listElement.appendChild(listItem);
