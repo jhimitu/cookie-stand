@@ -13,22 +13,26 @@ function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   console.log(this);
 }
 
-Store.prototype.generateRandomNumOfCustomers = (min, max) => {
+Store.prototype.generateRandomNumOfCustomers = function() {
   //TODO: generate a random number using max and min of customers
-  console.log('this is: generateRandomNumOfCustomers');
+  let max = this.maxCustomers;
+  let min = this.minCustomers;
+  
+  console.log(Math.floor(Math.random() * (max - min + 1)));
+  return Math.floor(Math.random() * (max - min + 1));
 },
 
-Store.prototype.calcCookiesEachHour = (num, avg) => {
+Store.prototype.calcCookiesEachHour = function() {
   //TODO: calcuate cookies needed using random number and average cookies per customer for each hour
   console.log('this is: alcCookiesEachHour');
 },
 
-Store.prototype.calcTotalCookiesPurchased = (arr) => {
+Store.prototype.calcTotalCookiesPurchased = function() {
   //TODO: sum cookies each hour into total of cookies for the day
   console.log('this is: calcTotalCookiesPurchased');
 },
 
-Store.prototype.render = () => {
+Store.prototype.render = function() {
   //TODO: render a row of store data to the table on sales page
   //do DOM stuff here
   //use createHeader
@@ -36,13 +40,13 @@ Store.prototype.render = () => {
   console.log('this is: render');
 }
 
-const createHeader = () => {
+const createHeader = function() {
   //TODO: create a header row for table on sales page
   //do DOM stuff here
   console.log('this is: createHeader');
 }
 
-const createFooter = () => {
+const createFooter = function() {
   //TODO: create a footer row for table on sales page
   //do DOM stuff here
   console.log('this is: createFooter');
@@ -50,6 +54,8 @@ const createFooter = () => {
 
 
 let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
+firstAndPike.generateRandomNumOfCustomers();
+
 let seatacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 let seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 let capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
