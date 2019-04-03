@@ -132,7 +132,9 @@ const createFooter = function() {
 
 function handleAddStore(e) {
   e.preventDefault();
+  
   console.log(e.target[1].value);
+  console.log()
 };
 
 
