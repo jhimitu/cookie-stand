@@ -4,6 +4,13 @@ const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
 
 let locations = [];
 
+//******** FORM ********//
+let form = document.getElementById('location-form');
+form.addEventListener('submit', handleAddStore);
+// console.log(form);
+
+//********* CONSTRUCTOR **********/
+
 function Store(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location;
   this.minCustomers = minCustomers;
@@ -122,6 +129,11 @@ const createFooter = function() {
   tfEnd.textContent = endData;
   trElem.appendChild(tfEnd);
 }
+
+function handleAddStore(e) {
+  e.preventDefault();
+  console.log(e.target[1].value);
+};
 
 
 let firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
