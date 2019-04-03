@@ -13,6 +13,17 @@
     <h1>Daily Sales Projections</h1>
   </header>
   <main>
+    <form id="location-form">
+      <fieldset>
+        <legend>Add/Update Location Form</legend>
+        <input name="location" type="text" placeholder="location name">
+        <input name="min-customers" type="number" placeholder="min customers">
+        <input name="max-customers" type="number" placeholder="max customers">
+        <input name="avg-cookies" type="number" placeholder="avg. cookies per customer">
+
+        <button type="submit">add/update location</button>
+      </fieldset>
+    </form>
     <table id="daily-sales-projections"></table>
   </main>
   <script src="js/app.js"></script>
