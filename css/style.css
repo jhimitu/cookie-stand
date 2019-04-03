@@ -1,4 +1,36 @@
 body {
   text-align: center;
   background-color: #efefef;
+  font-family: 'Merriweather', serif;
+}
+
+th, td {
+  border: 1px solid #8e8e8e;
+  border-collapse: collapse;
+  empty-cells: hide;
+  padding: 15px;
+  color: #4a4a4a;
+}
+thead {
+  background-color: #2dc7ff;
+}
+
+thead > tr > th {
+  color: white;
+}
+
+tbody > tr:hover, tfoot:hover {
+  background-color: #ead2ac;
+}
+
+tbody > tr:hover {
+  color: white;
+}
+
+th {
+  font-family: 'Merriweather', serif;
+}
+
+td {
+  font-family: 'Lato', sans-serif;
 }
