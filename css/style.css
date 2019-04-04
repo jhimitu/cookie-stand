@@ -19,14 +19,18 @@ nav {
   height: 60px;
 }
 
-nav li {
+#nav-links li {
   list-style: none;
 }
 
-nav img {
+#logo img {
   width: 150px;
   height: 50px;
-  align-self: flex-end;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: space-around;
 }
 
 #main-title {
