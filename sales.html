@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Raleway" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -15,15 +16,16 @@
   <main>
     <form id="location-form">
       <fieldset>
-        <legend>Add/Update Location Form</legend>
-        <input name="location" type="text" placeholder="location name">
-        <input name="min-customers" type="number" placeholder="min customers">
-        <input name="max-customers" type="number" placeholder="max customers">
-        <input name="avg-cookies" type="number" placeholder="avg. cookies per customer">
+        <legend>Location Form</legend>
+        <input name="location" type="text" placeholder="location name" required>
+        <input name="min-customers" type="number" placeholder="min customers" required>
+        <input name="max-customers" type="number" placeholder="max customers" required>
+        <input name="avg-cookies" type="number" placeholder="avg. cookies per customer" required>
 
         <button type="submit">add/update location</button>
       </fieldset>
     </form>
+    <a href="index.html">Return to Main</a>
     <table id="daily-sales-projections"></table>
   </main>
   <script src="js/app.js"></script>
