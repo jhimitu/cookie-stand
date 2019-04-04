@@ -3,11 +3,11 @@
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 let locations = [];
+console.log(locations);
 
 //******** FORM ********//
 let form = document.getElementById('location-form');
-form.addEventListener('submit', handleAddStore);
-// console.log(form);
+form.addEventListener('submit', handleAddStore); //see line 133 for handleAddStore function body
 
 //********* CONSTRUCTOR **********/
 
@@ -131,10 +131,23 @@ const createFooter = function() {
 }
 
 function handleAddStore(e) {
-  e.preventDefault();
+  let location = e.target[1].value;
+  let min = parseInt(e.target[2].value);
+  let max = parseInt(e.target[3].value);
+  let cookies = parseInt(e.target[4].value);
+
+  let store = new Store(location, min, max, cookies);
+
+  store.generateRandomNumOfCustomers();
+  store.calcCookiesEachHour();
+  store.calcTotalCookiesPurchased();
+  store.render();
+  console.log(locations);
+
+  document.getElementById('daily-sales-projections').deleteRow(-1);
+  createFooter();
   
-  console.log(e.target[1].value);
-  console.log()
+  e.preventDefault();
 };
 
 
