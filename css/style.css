@@ -6,38 +6,59 @@
 
 body {
   text-align: center;
-  background-color: #efefef;
   color: #4a4a4a;
   text-transform: uppercase;
+  background-color: #efefef;
 }
 
 nav {
   background-color: #00abe7;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
-  height: 60px;
+  height: 70px;
 }
 
 #nav-links li {
   list-style: none;
 }
 
-#logo img {
+#salmon {
   width: 150px;
   height: 50px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+#text-logo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 23px;
+  color: #fff;
 }
 
 #nav-links {
-  display: flex;
-  justify-content: space-around;
+  float: right;
+  margin-right: 70px;
+  padding-top: 23px;
 }
 
-#main-title {
-  color: #2dc7ff;
+#nav-links a {
+  color: #fff;
+  padding: 29px;
+}
+
+#nav-links a:hover {
+  background-color: #0081af;
+  transition: 0.3s;
+
+}
+
+#landing {
+  color: #4a4a4a;
   font-weight: bold;
   font-family: 'Playfair Display SC', serif;
   font-size: 5em;
+  margin-top: 250px;
 }
 
 fieldset {
