@@ -1,7 +1,14 @@
 body {
   text-align: center;
   background-color: #efefef;
-  font-family: 'Merriweather', serif;
+  
+}
+
+#main-title {
+  color: #2dc7ff;
+  font-weight: bold;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 5em;
 }
 
 th, td {
@@ -29,9 +36,9 @@ tbody > tr:hover {
 }
 
 th {
-  font-family: 'Merriweather', serif;
+  font-family: 'Playfair Display SC', serif;
 }
 
 td {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
