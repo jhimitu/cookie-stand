@@ -111,16 +111,19 @@ const createFooter = function() {
     locations.forEach((location) => {
       totalCookiesPerLocationEachHour.push(location.cookiesEachHour[i]);
     });
-
+    console.log(totalCookiesPerLocationEachHour);
     let total = totalCookiesPerLocationEachHour.reduce((acc, val) => {
-      hourlyTotalsForAll.push(acc + val);
       return acc + val;
     });
+    hourlyTotalsForAll.push(total);
+    console.log(total);
 
     let tdElem = document.createElement('td');
     tdElem.textContent = `${total}`;
     trElem.appendChild(tdElem);
   });
+
+  console.log(hourlyTotalsForAll);
 
   let endData = hourlyTotalsForAll.reduce((acc, val) => {
     return acc + val;
