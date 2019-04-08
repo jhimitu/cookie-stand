@@ -7,7 +7,7 @@
 body {
   text-align: center;
   color: #4a4a4a;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background-color: #efefef;
 }
 
@@ -15,6 +15,7 @@ nav {
   background-color: #00abe7;
   align-items: center;
   height: 70px;
+  text-transform: uppercase;
 }
 
 #nav-links li {
@@ -68,7 +69,7 @@ fieldset {
   margin: 0 225px 20px 225px;
 }
 
-input {
+form input {
   padding: 12px 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -88,6 +89,7 @@ button[type=submit] {
 a {
   color: #4a4a4a;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 table {
@@ -125,4 +127,47 @@ th {
 
 td {
   font-family: 'Raleway', sans-serif;
+}
+
+#home {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#home h2, #home p, #home img {
+  margin-top: 30px;
+}
+
+#home h2 {
+  text-transform: uppercase;
+}
+
+footer {
+  color: #fff;
+  background-color: #eaba6b;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  text-align: justify;
+  padding-top: 70px;
+  text-transform: none;
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+}
+
+footer ul {
+  list-style-type: none;
+  text-align: justify;
+}
+footer h4 {
+  padding-bottom: 10px;
+}
+
+footer input {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-family: 'Playfair Display SC', serif;
+  margin-top: 10px;
 }
